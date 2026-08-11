@@ -168,3 +168,8 @@ DROP TABLE IF EXISTS pedidos;
 DROP TABLE IF EXISTS clientes;
 DROP DATABASE IF EXISTS lojavirtual;
 
+
+database biblioteca
+tabelas 
+    - categorias, id (PK), nome
+    - livros, id (PK), titulo, autor, ano_publicacao, categoria_id (FK), status ENUM('disponivel', 'emprestado') DEFAULT 'disponivel'
