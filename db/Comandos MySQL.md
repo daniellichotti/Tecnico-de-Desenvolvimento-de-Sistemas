@@ -173,3 +173,39 @@ database biblioteca
 tabelas 
     - categorias, id (PK), nome
     - livros, id (PK), titulo, autor, ano_publicacao, categoria_id (FK), status ENUM('disponivel', 'emprestado') DEFAULT 'disponivel'
+
+-- SUBQUERY!!!
+CREATE DATABASE IF NOT EXISTS empresa_db;
+
+USE empresa_db;
+
+DROP TABLE funcionarios;
+
+CREATE TABLE IF NOT EXISTS funcionarios (
+	id_funcionario INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cargo VARCHAR(50),
+    departamento VARCHAR(50) NOT NULL,
+    salario DECIMAL(10, 2) NOT NULL,
+    data_admissao DATE NOT NULL
+);
+
+INSERT INTO funcionarios (nome, cargo, departamento, salario, data_admissao) VALUES
+('Ana Silva', 'Desenvolvedora Jr', 'TI', 3500.00, '2025-03-10'),
+('Bruno Souza', 'Desenvolvedor Pl', 'TI', 5500.00, '2026-07-15'),
+('Carla Dias', 'Gerente de TI', 'TI', 8000.00, '2024-01-20'),
+('Diego Rocha', 'Assistente Adm', 'Administrativo', 2200.00, '2026-08-01'),
+('Eduarda Lima', 'Analista de QA', 'TI', 4300.00, '2026-02-18'),
+('Fernanda Ramos', 'Diretora Geral', 'Diretoria', 9500.00, '2023-05-10');
+
+-- SUBQUERY COM UM COMPARADOR E AGREGAÇÃO
+SELECT AVG(salario) FROM funcionarios;
+SELECT nome, salario FROM funcionarios WHERE salario > ( SELECT AVG(salario) FROM funcionarios );
+
+
+-- SUBQUERY COM UM OPERADOR ALL
+SELECT nome, cargo, salario FROM funcionarios WHERE salario > ALL (SELECT salario FROM funcionarios WHERE departamento = 'TI');
+SELECT salario FROM funcionarios WHERE departamento = 'TI';
+
+-- SUBQUERY COM O OPERADOR IN
+SELECT nome, departamento FROM funcionarios WHERE departamento IN (SELECT departamento FROM funcionarios WHERE data_admissao >= '2026-07-01');
