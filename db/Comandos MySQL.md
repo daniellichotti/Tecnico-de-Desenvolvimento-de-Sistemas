@@ -209,3 +209,134 @@ SELECT salario FROM funcionarios WHERE departamento = 'TI';
 
 -- SUBQUERY COM O OPERADOR IN
 SELECT nome, departamento FROM funcionarios WHERE departamento IN (SELECT departamento FROM funcionarios WHERE data_admissao >= '2026-07-01');
+
+## Views e Stored Procedures
+-- 1. CRIANDO E SELECIONANDO O BANCO DE DADOS
+CREATE DATABASE IF NOT EXISTS empresa_db;
+USE empresa_db;
+
+-- 2. CRIANDO AS  TABELAS DEPARTAMENTOS E FUNCIONARIOS
+CREATE TABLE departamentos (
+	id_depto INT PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE funcionarios (
+	id_func INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cargo VARCHAR(50) NOT NULL,
+    salario DECIMAL(10, 2) NOT NULL,
+    id_depto INT,
+    FOREIGN KEY (id_depto) REFERENCES departamentos(id_depto)
+);
+
+INSERT INTO departamentos VALUES
+(1, 'TI'),
+(2, 'RH'),
+(3, 'Vendas');
+
+INSERT INTO funcionarios VALUES
+(101, 'Ana Silva', 'Desenvolvedora', 7500.00, 1),
+(102, 'Gustavo Erthal', 'Analista de RH', 4200.00, 2),
+(103, 'Gabriel Pedro', 'Gerente TI', 12000.00, 1),
+(104, 'Caio Moreti', 'Vendedor', 3500.00, 3),
+(105, 'Kauê Ferreira', 'Desenvolvedor', 8000.00, 1);
+
+SELECT * FROM funcionarios;
+
+CREATE VIEW vw_funcionarios_dev AS SELECT * FROM funcionarios WHERE cargo = 'Desenvolvedor';
+
+SELECT * FROM vw_funcionarios_dev;
+
+-- CRIANDO A NOSSA QUERIDA VIEW
+CREATE VIEW vw_funcionarios_ti AS 
+SELECT
+	f.nome AS funcionario,
+    f.cargo,
+    d.nome AS departamento
+FROM funcionarios f
+INNER JOIN departamentos d ON f.id_depto = d.id_depto
+WHERE d.nome = 'TI';
+
+SELECT * FROM vw_funcionarios_ti;
+
+-- CRIANDO UM STORED PROCEDURES TEMPORARIO
+SELECT 
+	AVG(salario), COUNT(*) 
+    INTO @media_salario, @total_funcionarios 
+FROM funcionarios;
+
+SELECT 
+	ROUND(@media_salario, 2) AS 'Media Salarial', 
+	@total_funcionarios AS 'Total de Funcionarios';
+    
+-- CRIANDO UM STORED PROCEDURES VARIAVEL
+
+DELIMITER //
+CREATE PROCEDURE calcular_metricas_empresa()
+BEGIN
+	-- DECLARAÇÃO DE VARIAVEIS LOCAIS
+	DECLARE v_media_salarial DECIMAL(10, 2);
+    DECLARE v_total_funcs INT;
+    
+    -- ATRIBUINDO VALORES
+    SELECT 
+		AVG(salario), COUNT(*) 
+		INTO v_media_salarial, v_total_funcs 
+	FROM funcionarios;
+    
+    -- EXIBINDO O RESULTADO
+    SELECT 
+		ROUND(v_media_salarial, 2) AS 'Media Salarial', 
+		v_total_funcs AS 'Total de Funcionarios';
+END //
+DELIMITER ;
+
+-- CHAMANDO A PROCEDURE
+CALL calcular_metricas_empresa();
+
+DELIMITER //
+CREATE PROCEDURE reajustar_salario_dpto(
+	IN p_id_depto INT,
+    IN p_porcentagem DECIMAL(10, 2),
+    OUT p_mensagem VARCHAR(150)
+)
+BEGIN
+	DECLARE v_nova_media DECIMAL(10, 2);
+    
+    -- ATUALIZANDO OS SALÁRIOS COM O PARAMETRO DE ENTRADA
+    UPDATE funcionarios 
+    SET salario = salario + (salario * p_porcentagem/100)
+    WHERE id_depto = p_id_depto;
+    
+     SELECT 
+		AVG(salario)
+		INTO v_nova_media 
+	FROM funcionarios
+    WHERE id_depto = p_id_depto;
+    
+    IF v_nova_media < 5000.00 THEN
+		SET p_mensagem = CONCAT('ATENÇÃO: A nova média do departamento ', p_id_depto, ' ainda é abaixo de R$5000.00');
+    ELSE
+		SET p_mensagem = CONCAT('Sucesso: A nova média do departamento ', p_id_depto, ' é maior que R$5000.00');
+	END IF;
+END //
+DELIMITER ;
+
+-- CHAMANDO PROCEDURE
+CALL reajustar_salario_dpto(1, 10.0, @msg);
+
+SELECT * FROM funcionarios WHERE id_depto = 1;
+
+SELECT @msg AS Resultado;
+
+
+
+
+
+
+
+
+
+
+
