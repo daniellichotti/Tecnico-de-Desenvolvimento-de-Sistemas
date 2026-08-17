@@ -211,11 +211,15 @@ SELECT salario FROM funcionarios WHERE departamento = 'TI';
 SELECT nome, departamento FROM funcionarios WHERE departamento IN (SELECT departamento FROM funcionarios WHERE data_admissao >= '2026-07-01');
 
 ## Views e Stored Procedures
--- 1. CRIANDO E SELECIONANDO O BANCO DE DADOS
+
+### 1. CRIANDO E SELECIONANDO O BANCO DE DADOS
+```
 CREATE DATABASE IF NOT EXISTS empresa_db;
 USE empresa_db;
+```
 
--- 2. CRIANDO AS  TABELAS DEPARTAMENTOS E FUNCIONARIOS
+### 2. CRIANDO AS  TABELAS DEPARTAMENTOS E FUNCIONARIOS
+```
 CREATE TABLE departamentos (
 	id_depto INT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL
@@ -243,12 +247,15 @@ INSERT INTO funcionarios VALUES
 (105, 'Kauê Ferreira', 'Desenvolvedor', 8000.00, 1);
 
 SELECT * FROM funcionarios;
+```
 
+
+### CRIANDO A NOSSA QUERIDA VIEW
+```
 CREATE VIEW vw_funcionarios_dev AS SELECT * FROM funcionarios WHERE cargo = 'Desenvolvedor';
 
 SELECT * FROM vw_funcionarios_dev;
 
--- CRIANDO A NOSSA QUERIDA VIEW
 CREATE VIEW vw_funcionarios_ti AS 
 SELECT
 	f.nome AS funcionario,
@@ -259,8 +266,10 @@ INNER JOIN departamentos d ON f.id_depto = d.id_depto
 WHERE d.nome = 'TI';
 
 SELECT * FROM vw_funcionarios_ti;
+```
 
--- CRIANDO UM STORED PROCEDURES TEMPORARIO
+### CRIANDO UM STORED PROCEDURES TEMPORARIO
+```
 SELECT 
 	AVG(salario), COUNT(*) 
     INTO @media_salario, @total_funcionarios 
@@ -269,13 +278,15 @@ FROM funcionarios;
 SELECT 
 	ROUND(@media_salario, 2) AS 'Media Salarial', 
 	@total_funcionarios AS 'Total de Funcionarios';
+```
     
--- CRIANDO UM STORED PROCEDURES VARIAVEL
+### CRIANDO UM STORED PROCEDURES VARIAVEL
 
+```
 DELIMITER //
 CREATE PROCEDURE calcular_metricas_empresa()
 BEGIN
-	-- DECLARAÇÃO DE VARIAVEIS LOCAIS
+	--- DECLARAÇÃO DE VARIAVEIS LOCAIS
 	DECLARE v_media_salarial DECIMAL(10, 2);
     DECLARE v_total_funcs INT;
     
@@ -329,14 +340,4 @@ CALL reajustar_salario_dpto(1, 10.0, @msg);
 SELECT * FROM funcionarios WHERE id_depto = 1;
 
 SELECT @msg AS Resultado;
-
-
-
-
-
-
-
-
-
-
-
+```
