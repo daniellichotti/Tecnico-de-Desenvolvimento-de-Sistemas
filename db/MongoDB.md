@@ -122,4 +122,4 @@ db.produtos.deleteMany({ estoque: { $lte: 0 } })
 ### 6. Verificação Final
 Verifique como a coleção ficou após as alterações e remoções:
 
-db.produtos.find().pretty()
+db.produtos.find()
