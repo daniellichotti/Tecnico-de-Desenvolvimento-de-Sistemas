@@ -8,8 +8,24 @@ db = client["anime_db"]
 colecao = db["personagens"]
 
 def listarPersonagens():
+    print("-------------------------------------")
     for personagem in colecao.find():
         print(personagem)
+        for i in range(1, len(list(personagem.keys()))):
+            print(f"{list(personagem.keys())[i]}: {list(personagem.values())[i]}")
+        print("-------------------------------------")
+
+def listarPersonagem():
+    nome_do_personagem = input("Qual nome do personagem que voçê quer ver? ")
+    if not colecao.find_one({ 'nome': nome_do_personagem }):
+        print("Personagem não encontrado!")
+        return None
+    else: 
+        personagem = colecao.find_one({ 'nome': nome_do_personagem })
+        for i in range(1, len(list(personagem.keys()))):
+            print(f"{list(personagem.keys())[i]}: {list(personagem.values())[i]}")
+        print("-------------------------------------")
+        return nome_do_personagem
 
 def cadastrarPersonagem():
     nome_novo_personagem = input("Entre com o nome do personagem: ")
@@ -32,15 +48,34 @@ def cadastrarPersonagem():
     colecao.insert_one(novo_personagem)
     print(novo_personagem, "adicionado com sucesso!")
 
+def deletarPersonagem():
+    listarPersonagens()
+    personagem_para_deletar = input("Qual o nome do personagem que você deseja deletar?")
+
+    try:
+        if not colecao.find_one({ 'nome': personagem_para_deletar }):
+                print("Personagem não encontrado!")
+        else: 
+            colecao.delete_one({ "nome":  personagem_para_deletar})
+            print("Deletado com sucesso!")
+    except:
+        print("Erro ao deletar!")
+
+
+
 print("Bem vindo ao Anime DB!!!")
 while True:
+    print("\n")
+    print("=========================================================")
     print("Escolha: ")
     print("1. Para cadastrar o personagen")
     print("2. Para listar os personagens")
-    print("3. Para atualizar o personagen")
-    print("4. Para deletar o personagen")
+    print("3. Para listar um personagem")
+    print("4. Para atualizar o personagen")
+    print("5. Para deletar o personagen")
     print("0. Para sair")
     op = int(input())
+    print("\n")
 
     match op:
         case 1:
@@ -50,11 +85,14 @@ while True:
             #Lista o personagem
             listarPersonagens()
         case 3:
+            #Lista o personagem
+            listarPersonagem()
+        case 4:
             #Atualiza o personagem
             print("Atualiza")
-        case 4:
+        case 5:
             #Deleta o personagem
-            print("Deleta")
+            deletarPersonagem()
         case 0:
             print("Até mais!!!")
             break
