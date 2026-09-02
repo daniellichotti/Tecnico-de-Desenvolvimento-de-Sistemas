@@ -6,6 +6,7 @@
     <title>Aula 02</title>
 </head>
 <body>
+    <!--
     <a href="https://google.com">Ir para o google</a>
     <br>
     <a href="https://google.com" target="_blank">Ir para o google em uma nova aba</a>
@@ -30,7 +31,7 @@
 
     <img title="instagram" src="assets/Instagram_icon.png" alt="" width="30px" height="30px">
     <br>
-    <img title="instagram" src="assets/gif.gif" alt="" width="100px" height="100px">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img title="instagram" src="assets/gif.gif" alt="" width="100px" height="100px">
 
     <br>
 
@@ -63,5 +64,62 @@
         <li><del>Feijao</del></li>
         <li>Macarrão</li>
     </ul>
+
+    <iframe src="aula1.html" frameborder="0" width="100px" height="200px" title="Meu Iframe"></iframe>
+    -->
+    <br>
+
+    <form action="">
+        
+        <label for="">Nome:</label>
+        <input type="text" placeholder="Digite seu nome aqui" required>
+        
+        <br>
+
+        <label for="">Sobrenome:</label>
+        <input type="text" placeholder="Digite seu sobrenome aqui" required>
+        
+        <br>
+
+        <label for="">Senha:</label>
+        <input type="password" placeholder="Digite sua senha aqui" required>
+        
+        <br>
+        
+        <label for="">email:</label>
+        <input type="email" placeholder="Digite seu email aqui" required>
+        
+        <br>
+        <label for="masculino">Masculino</label>
+        <input type="radio" name="genero" id="masculino" value="Masculino">
+        <br>
+        
+        <label for="feminino">Feminino</label>
+        <input type="radio" name="genero" id="feminino" value="Feminino">
+        
+        <br>
+        <label for="naoEspecificado">Não especificado</label>
+        <input type="radio" name="genero" id="naoEspecificado" value="Não especificado">
+        
+        <br>
+        <label>Precisa de ajuda?</label>
+        <input type="checkbox">
+        
+        <br>
+        <select name="cores">
+            <option selected disabled>Selecione uma cor</option>
+            <option value="Vermelho">Vermelho</option>
+            <option value="Amarelo">Amarelo</option>
+            <option value="Verde">Verde</option>
+        </select>
+        
+        <br>
+        <textarea name="mensagem" id="" placeholder="Digite aqui a sua mensagem" rows="10" cols="40" required></textarea>
+        
+        <br>
+        <button>Submit</button>
+        
+    </form>
+
 </body>
 </html>
