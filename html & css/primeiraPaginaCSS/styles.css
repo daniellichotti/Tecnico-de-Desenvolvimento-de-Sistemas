@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+* {
+    padding: 20px;
+}
+
+body {
+    color: #f0c;
+}
+h1 {
+    color: black;
+    font-size: 20px;
+    
+
+    letter-spacing: 4px;
+    height: 150px;
+    width: 210px;
+    background-color: gray;
+    border-left: 2px dashed orange;
+    border-bottom: 2px dashed orange;
+
+    border-radius: 8px;
+    
+    direction: rtl;
+    unicode-bidi: bidi-override;
+
+    text-align: center;
+    margin-left: calc(100vw/2 - 120px);
+    margin-top: 100px;
+}
+p {
+    font-size: 15px;
+    background-color: blue;
+    border-radius: 8px;
+
+    font-weight: bold;
+    text-decoration: line-through;
+
+    text-transform: uppercase;
+
+    text-indent: 50px;
+    line-height: 2;
+    letter-spacing: 5px;
+    word-spacing: 20px;
+    
+    font-family: "Comic Neue", cursive;;
+
+    border: 2px dashed orange;
+
+    margin: 10px 40px 30px 30px;
+}
+
+h1, p {
+    padding: 8px;
+}
+
+.class1 {
+    font-size: 30px;
+}
+.class2 {
+    font-size: 10px
+}
+
+.blackFont {
+    color: orange;
+}
+
+#identificador-unico {
+    color: orange;
+}
+
+#botao-link {
+    background-color: greenyellow;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 4px;
+    border-radius: 8px;
+    border: 1px solid #f0c;
+    padding: 30px 50px 30px 50px;
+}
+
+#botao {
+    margin-top: 100px;
+    background-color: greenyellow;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 4px;
+    border-radius: 8px;
+    border: 1px solid #f0c;
+    padding: 30px 50px 30px 50px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    &:hover {
+    background-color: blue;
+    border: 3px solid greenyellow;
+    width: 300px;
+    height: 100px;
+    }
+}
+
+p {
+    strong {
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: large;
+        }
+    }
+}
