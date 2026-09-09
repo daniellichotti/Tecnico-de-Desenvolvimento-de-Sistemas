@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #64748b;
+}
+
+#container {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+#container > div {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+
+    transition: flex-grow .3s ease;
+}
+
+#container > div:hover {
+    flex-grow: 3;
+}
+
+#div-um {
+    background-image: url(assets/lanche-um.jpg);
+}
+
+#div-dois {
+    background-image: url(assets/lanche-dois.jpg);
+
+    flex-shrink: 3;
+}
+#div-tres {
+    background-image: url(assets/lanche-tres.jpg);
+}
+#div-quatro {
+    background-image: url(assets/lanche-quatro.jpg);
+}
+#div-cinco {
+    background-image: url(assets/lanche-cinco.jpg);
+}

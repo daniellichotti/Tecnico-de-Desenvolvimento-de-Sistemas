@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(135deg, #fbeaff, #b39cd0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    background-color: #b39cd0;
+    color: white;
+
+    font-size: 30px;
+    font-family: "Comic Neue", cursive;
+    font-weight: 300;
+    font-style: normal;
+
+    height: 100px;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .menu-container {
+        border: 2px solid #b39cd0;
+        border-radius: 8px;
+        width: 300px;
+        padding: 16px;
+        margin: 32px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #845ec2;
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            color: #845ec2;
+        }
+
+        img {
+            height: 200px;
+            border-radius: 99%;
+        }
+
+        a {
+            background-color: rgb(115, 171, 32);
+            height: 40px;
+            width: 100px;
+            text-decoration: none;
+            color: white;
+            border-radius: 8px;
+            margin-top: 30px;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: .2s;
+            
+            &:hover {
+                background-color: rgb(145, 215, 40);
+                box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+                height: 60px;
+                width: 120px;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: white;
+
+    padding: 16px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    h3 {
+        color: #845ec2;
+        font-size: 20px;
+    }
+
+    a {
+        img {
+            height: 40px;
+            width: 40px;
+        }
+    }
+}
