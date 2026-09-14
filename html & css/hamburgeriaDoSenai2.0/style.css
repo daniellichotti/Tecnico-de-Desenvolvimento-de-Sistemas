@@ -28,16 +28,72 @@ header {
     z-index: 99;
 }
 
+#section-separator {
+    height: 4px;
+    width: 100vw;
+    background-color: #d97706;
+}
+
 #contato {
     background-color: #fef3c7;
     height: 100vh;
     width: 100%;
-    border-top: 8px solid #d97706;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     div > iframe {
         width: 300px;
         height: 300px;
         border-radius: 16px;
+    }
+}
+
+#conteudo-contato{
+    background-color: rgb(217, 119, 6, .75);
+    padding: 40px;
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+#separator {
+    height: 300px;
+    width: 1px;
+    background-color: #451a03;
+}
+
+#links-contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: #fcd34d;
+
+    h3 {
+        margin-bottom: 50px;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        text-decoration: none;
+        color: #fef3c7;
+    }
+
+    a > img {
+        height: 30px;
+        width: 30px;
     }
 }
 

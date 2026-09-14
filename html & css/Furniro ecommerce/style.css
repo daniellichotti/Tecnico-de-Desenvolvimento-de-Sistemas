@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
+header {
+    height: 100px;
+    width: 100vw;
+
+    padding: 0px 100px 0px 54px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    nav {
+        width: 430px;
+        height: 24px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: #000000;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+        }
+    }
+}
+
+#logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    img {
+        width: 50px;
+        height: 32px;
+    }
+
+    h1 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        font-size: 34px;
+    }
+}
+
+#account-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+
+    a {
+        padding: 2.3px 4.7px;
+        text-decoration: none;
+        height: 28px;
+        width: 28px;
+    }
+}
