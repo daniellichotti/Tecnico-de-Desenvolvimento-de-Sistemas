@@ -72,12 +72,12 @@ header {
 
 main{
 
-    section {
+    #first-section {
         height: 716.83px;
         width: 100vw;
         background-image: url(assets/scandinavian-interior-mockup-wall-decal-background\ 1\ \(1\).png);
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
 
         display: flex;
         justify-content: end;
@@ -89,6 +89,50 @@ main{
             width: 643px;
             border-radius: 10px;
             margin-right: 58px;
+
+            padding: 62px 39px 37px 43px;
+
+            p {
+                font-family: "Poppins", sans-serif;
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 3px;
+            }
+
+            h2 {
+                font-family: "Poppins", sans-serif;
+                font-size: 52px;
+                font-weight: bold;
+                line-height: 65px;
+                color: #B88E2F;
+                width: 400px;
+                margin-top: 4px;
+                margin-bottom: 17px;
+            }
+
+            h3 {
+                font-family: "Poppins", sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 24px;
+                width: 550px;
+                margin-top: 17px;
+            }
+
+            button {
+                text-decoration: none;
+                border: none;
+                background-color: #B88E2F;
+                color: white;
+                margin-top: 46px;
+                width: 222px;
+                height: 74px;
+
+                font-family: "Poppins", sans-serif;
+                font-size: 16px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
         }
     }
 }
