@@ -1,0 +1,91 @@
+* {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fbeaff;
+    height: 100vh;
+    width: 100vw;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 20px;
+
+}
+
+#inputContainer {
+    background-color: #c2b4d4;
+    padding: 16px;
+
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    input {
+        width: 240px;
+        height: 30px;
+        border-radius: 8px;
+
+        border: none;
+        padding: 8px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+#cardContainer {
+    background-color: #9b79d1;
+
+    padding: 16px;
+    width: 550px;
+    height: 300px;
+    border-radius: 8px;
+    color: rgb(215, 212, 212);
+    text-shadow: 10px;
+    box-shadow: 10px 10px 10px rgb(170, 170, 170);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    img {
+        height: 100px;
+        width: 110px;
+    }
+
+    h1, h2 {
+        line-height: 10px;
+    }
+
+    #infoCardContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+
+        #dateAndCVV {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+
+            img {
+                left: 200px;
+            }
+        }
+    }
+}

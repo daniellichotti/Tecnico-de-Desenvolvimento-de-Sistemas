@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="inputContainer">
+        <input type="text" name="" id="nomeTitular" placeholder="Nome do Titular">
+        <input type="text" name="" id="numeroDoCartao" placeholder="Numero do Cartáo">
+        <input type="text" name="" id="validadeDoCartao" placeholder="Data de Validade MM/AA">
+        <input type="text" name="" id="codigoDeSeguranca" placeholder="C.V.V.">
+    </div>
+
+    <div id="cardContainer">
+        <img src="assets/nubank-logo-2021.svg" alt="">
+        
+        <div id="infoCardContainer">
+            <h1 id="nomeTitularCartao">Nome do Titular</h1>
+            <h2 id="numeroDoCartaoHeader">5467 6547 7896 2317</h2>
+            <div id="dateAndCVV">
+                <div style="display: flex;justify-content: flex-start;align-items: center; gap: 8px;">
+                    <p>VALID THRU: </p>
+                    <p id="validDate">10/38</p>
+                    <p>CVV: </p>
+                    <p id="cvv">100</p> 
+                </div>
+                <img src="assets/Mastercard-logo.svg" alt="">
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
