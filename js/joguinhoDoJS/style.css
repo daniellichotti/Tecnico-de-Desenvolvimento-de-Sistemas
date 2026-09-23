@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    overflow: hidden;
+}
+
+#jogo {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: #111;
+}
+
+.bolinha {
+    width: 25px;
+    height: 25px;
+
+    background-color: red;
+    border-radius: 50%;
+
+    position: absolute;
+}
+
+#barra {
+    width: 120px;
+    height: 20px;
+
+    background-color: white;
+
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+#pontos {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    font-size: 24px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
