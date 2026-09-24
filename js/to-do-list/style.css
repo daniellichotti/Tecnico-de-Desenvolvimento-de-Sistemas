@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(45deg, #082f49, #67e8f9);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: #f0f9ff;
+}
+
+.app-container {
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    header {
+        background-color: #f0f9ff;
+        padding: 16px;
+        border-radius: 8px;
+
+        color: #082f49;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 16px;
+        margin-top: 200px;
+
+        h1 {
+
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            letter-spacing: 4px;
+            font-size: 50px;
+        }
+        
+        button {
+            all: unset;
+            cursor: pointer;
+            background-color: #082f49;
+            border-radius: 50%;
+            padding: 8px;
+            font-size: 30px;
+        }
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    input {
+        font-size: 20px;
+        outline: none;
+        border: none;
+        padding: 16px;
+        width: 400px;
+        border-radius: 8px;
+        border: 1px solid #f0f9ff;
+        
+        &:focus {
+            border: 1px solid #082f49;
+        }
+    }
+
+    button {
+            all: unset;
+            cursor: pointer;
+            background-color: #082f49;
+            padding: 8px;
+            font-size: 20px;
+            transition: .1s ease-in;
+
+            &:hover {
+                background-color: #67e8f9;
+                color: #082f49;
+                
+            }
+        }
+}
+
+ol {
+
+    font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.riscado {
+    text-decoration: line-through;
+    color: red;
+}
+
+.item {
+    cursor: pointer;
+}

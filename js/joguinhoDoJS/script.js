@@ -41,6 +41,14 @@ function criarBolinha(){
 
     function cair(){
         y += 4
+        if(pontos >= 10){
+            y += 2
+            velocidadeBarra += 2
+        }
+        if(pontos >= 20){
+            y += 2
+            velocidadeBarra += 2
+        }
 
         bolinha.style.top = y + 'px'
 
