@@ -5,11 +5,18 @@
 }
 
 body {
+    
     min-height: 100vh;
     background: linear-gradient(45deg, #082f49, #67e8f9);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; 
+    color: #f0f9ff;
+}
 
+.dark-theme {
+    background: linear-gradient(45deg, #041825, #224f55);
+    background-repeat: no-repeat;
+    background-size: cover; 
     color: #f0f9ff;
 }
 
