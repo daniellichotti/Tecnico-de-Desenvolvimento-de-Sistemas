@@ -19,6 +19,16 @@
       "title": "Guren Lagan",
       "rating": 5,
       "id": "wroTERpPPvk"
+    },
+    {
+      "title": "pedro vacilao",
+      "rating": "1",
+      "id": "1t7Sf08TkKc"
+    },
+    {
+      "title": "Naruto",
+      "rating": "5",
+      "id": "xkDFMjNpVaU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

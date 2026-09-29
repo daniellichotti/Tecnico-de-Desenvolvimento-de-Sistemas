@@ -1,8 +1,34 @@
+const animesList = document.getElementById("animesList")
+const animeForm = document.getElementById("animeForm")
+const titleInput = document.getElementById("titleInput")
+const ratingInput = document.getElementById("ratingInput")
+
+animeForm.addEventListener('submit', (event) => {
+    event.preventDefault()
+
+    postAnime({
+        "title": titleInput.value,
+        "rating": ratingInput.value
+    })
+
+    animesList.innerHTML = ''
+    getAnimes()
+})
+
 async function getAnimes() {
     const res = await fetch('http://localhost:3000/animes')
     const data = await res.json()
 
-    console.log(data)
+    for(let i = 0; i < data.length; i++){
+        animesList.innerHTML += `
+            <li>
+                <h2>${data[i]["title"]}</h2>
+                <p>id: ${data[i]["id"]}</p>
+                <p>Rating: ${data[i]["rating"]}</p>
+            </li>
+        `
+    }
+    
 }
 
 async function getAnime(id) {
@@ -52,15 +78,15 @@ async function putAnime(id) {
     })
 }
 
-//getAnimes()
+getAnimes()
 //getAnime(1)
 
-for(let i=0; i<1; i++) {
+//for(let i=0; i<1; i++) {
   //  postAnime({
     //    "title": "Guren Lagan",
     //    "rating": 5
     //})
-}
+//}
 //deleteAnime(1)
 //pathAnime(3)
-putAnime("3")
+//putAnime("3")
