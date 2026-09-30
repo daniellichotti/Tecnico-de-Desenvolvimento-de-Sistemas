@@ -1,0 +1,9 @@
+#pokemon {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(51, 255, 0);
+    background-image: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
