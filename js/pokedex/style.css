@@ -1,9 +1,19 @@
-#pokemon {
+#pokemonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemon {
+    border-radius: 8px;
     width: 100px;
     height: 100px;
+
     background-color: rgb(51, 255, 0);
     background-image: none;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }

@@ -1,37 +1,32 @@
 const apiUrl = 'https://pokeapi.co/api/v2/'
 
-const pokemonDiv = document.getElementById("pokemon")
+const pokemonsContainer = document.getElementById("pokemonsContainer")
 
+let page = 40
+let limit = 20
 
 
 
 async function getPokemons() {
-    const res = await fetch(apiUrl+'pokemon/?offset=0&limit=20')
+    const res = await fetch(apiUrl+`pokemon/?offset=${page}&limit=${limit}`)
     const data = await res.json()
 
-    getPokemon(data["results"][0]["url"])
-
-    /*
-    for(let i = 0; i < data.length; i++){
-        animesList.innerHTML += `
-        <div class="animeCard">
-        <h2>${data[i]["title"]}</h2>
-        <p>id: ${data[i]["id"]}</p>
-        <p>Rating: ${data[i]["rating"]}</p>
-        </div>
-        `
+    for(let i = 0; i < data["results"].length; i++){
+        getPokemon(data["results"][i]["url"])
     }
-    */
-    
 }
 
 async function getPokemon(url) {
     const res = await fetch(url)
     const data = await res.json()
 
+    const newPokemon = document.createElement("div")
+    newPokemon.classList.add("pokemon")
+    pokemonsContainer.appendChild(newPokemon)
+
     console.log(data["sprites"]["front_default"])
-    pokemonDiv.style.backgroundImage = `url(${data["sprites"]["front_default"]})`
-    pokemonDiv.style.backgroundSize = '150%'
+    newPokemon.style.backgroundImage = `url(${data["sprites"]["front_default"]})`
+    //newPokemon.style.backgroundSize = '150%'
 }
 
 getPokemons()
