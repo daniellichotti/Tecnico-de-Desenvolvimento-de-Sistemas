@@ -29,6 +29,21 @@
       "title": "Naruto",
       "rating": "5",
       "id": "xkDFMjNpVaU"
+    },
+    {
+      "title": "Thiago com H",
+      "rating": "5",
+      "id": "KxBE36p2CIE"
+    },
+    {
+      "title": "Fullmetal Alchemist",
+      "rating": "2",
+      "id": "2aKV-y6oZM8"
+    },
+    {
+      "title": "solo leveling",
+      "rating": "4",
+      "id": "YsqZvtAjuC8"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(45deg, rgb(255, 126, 253), rgb(255, 113, 113));
+}
+
+#gameContainer {
+    width: 100vw;
+    height: 100vh;
+}
+
+.fruit {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(13, 0, 255);
+    position: absolute;
+}
+
+#snake {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: rgb(13, 255, 0);
+    position: absolute;
+}

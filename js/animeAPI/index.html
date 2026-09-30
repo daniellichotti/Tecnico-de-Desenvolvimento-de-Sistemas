@@ -8,18 +8,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <h1>Lista animes:</h1>
-        <ol id="animesList">
-        </ol>
+    <div id="animeListContainer">
+        <h1>Animes!</h1>
+        <div id="animesList">
+        </div>
+
+        <form id="animeForm">
+            <input type="text" name="" id="titleInput" placeholder="Titulo do anime">
+            <input type="text" name="" id="ratingInput" placeholder="Rating do anime">
+            <button type="submit">Adicionar!</button>
+        </form>
     </div>
-
-    <form id="animeForm">
-        <input type="text" name="" id="titleInput" placeholder="Titulo do anime">
-        <input type="text" name="" id="ratingInput" placeholder="Rating do anime">
-        <button type="submit">Enviar</button>
-    </form>
-
     
     <script src="script.js"></script>
 </body>

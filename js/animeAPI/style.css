@@ -1,3 +1,91 @@
 body {
-    background-color: orange;
+    background-color: orange    ;
+}
+
+#animesList {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+#animeListContainer {
+    padding: 20px;
+
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    h1 {
+        background-color: white;
+        padding: 8px;
+        font-size: 50px;
+        font-weight: 600;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: rgb(13, 0, 255);
+        letter-spacing: 8px;
+        text-shadow: 4px 4px 8px rgb(170, 170, 170);
+    }
+}
+
+#animeForm {
+    margin-top: 36px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+
+    input {
+        font-size: 24px;
+        outline: none;
+        border: 2px solid rgb(13, 0, 255);
+        border-radius: 8px;
+        padding: 8px;
+    }
+    
+    button {
+        background-color: rgb(13, 0, 255);
+        border: none;
+        padding: 8px;
+        border-radius: 8px;
+        font-size: 24px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: white;
+        
+        &:hover {
+            background-color: rgb(9, 0, 177);
+            box-shadow: 4px 4px 8px rgb(82, 82, 82);
+            cursor: pointer;
+        }
+    }
+}
+
+.animeCard {
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 12px #878787;
+    padding: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    h2 {
+        font-size: 25px;
+        color: rgb(255, 0, 204);
+    }
+    
+    p {
+        font-size: 15px;
+    }
 }
