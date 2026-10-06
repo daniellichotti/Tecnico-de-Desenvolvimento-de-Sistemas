@@ -21,20 +21,30 @@ async function createPokemonCard(url) {
 
     pokemonsContainer.innerHTML = `
             <div class="pokemonCard">
-                <h2>${data["name"]}</h2>
+                <h2>${data["name"].charAt(0).toUpperCase() + data["name"].slice(1)}</h2>
                 <p>id: ${data["id"]}</p>
                 <img src="${data["sprites"]["front_default"]}" alt="">
             </div>
     `
 }
 
+async function evolvePokemonAnimation() {
+    
+}
+
 function prevPage() {
     page -= 1
+    if(page <= 0) {
+        page = 1
+    }
     console.log(page)
     getPokemons()
 }
 function nextPage() {
     console.log(page)
+    if(page>=limit-1) {
+        limit += 20
+    }
     page += 1
     getPokemons()
 }

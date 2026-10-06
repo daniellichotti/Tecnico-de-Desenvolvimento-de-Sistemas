@@ -1,0 +1,14 @@
+#main-container {
+    height: calc(100vh - 200px);
+    width: 100vw;
+    
+    padding: 16px;
+
+    background-color: rgb(154, 154, 154);
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

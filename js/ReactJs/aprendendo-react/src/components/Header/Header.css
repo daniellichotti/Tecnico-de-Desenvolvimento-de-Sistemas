@@ -1,0 +1,14 @@
+#header-container {
+    height: 100px;
+    width: 100vw;
+    
+    padding: 8px;
+
+    background-color: rgb(138, 57, 57);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

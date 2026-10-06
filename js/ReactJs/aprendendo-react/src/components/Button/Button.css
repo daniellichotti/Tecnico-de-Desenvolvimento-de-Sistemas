@@ -1,0 +1,19 @@
+#button-customization {
+    height: 30px;
+    width: 100px;
+
+    background-color: greenyellow;
+    
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    
+    margin-right: 8px;
+    
+    cursor: pointer;
+    
+    transition: .2s ease;
+    &:hover {
+        background-color: rgb(195, 255, 104);
+    }
+}
