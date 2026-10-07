@@ -1,4 +1,4 @@
-import { DeliverContainer, HeaderContainer, SearchFoodContainer } from "./styled";
+import { DeliverContainer, HeaderContainer, InputContainer, SearchButton, SearchFoodContainer } from "./styled";
 import Logo from '../../assets/Logo.svg'
 import MapMarker from '../../assets/map-marker-alt.svg'
 import UserIcon from '../../assets/user.svg'
@@ -19,11 +19,12 @@ export function Header() {
             <SearchFoodContainer>
                 
                 <img style={{height: 18, width: 18}} src={SearchIcon} alt="" />
-                <input type="text" placeholder="Search Food"/>
+                <InputContainer type="text" placeholder="Search Food"/>
 
-                <button>
+                <SearchButton>
                     <img src={UserIcon} alt="" />
-                    Login</button>
+                    Login
+                </SearchButton>
             </SearchFoodContainer>
         </HeaderContainer>
     )

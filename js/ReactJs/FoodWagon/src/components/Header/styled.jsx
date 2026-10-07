@@ -53,20 +53,21 @@ export const SearchFoodContainer = styled.div`
     align-items: center;
     justify-content: center;
     gap: 8px;
+`
 
-    input {
-        height: 18px;
-        width: 124px;
+export const InputContainer = styled.input`
+    height: 18px;
+    width: 124px;
 
-        outline: none;
-        border: none;
+    outline: none;
+    border: none;
 
-        font-size: 14px;
-        font-weight: bold;
-    }
+    font-size: 14px;
+    font-weight: bold;
+`
 
-    button {
-        width: 118px;
+export const SearchButton = styled.button`
+    width: 118px;
         height: 46px;
         padding: 14px 24px;
 
@@ -93,5 +94,4 @@ export const SearchFoodContainer = styled.div`
             height: 18px;
             width: 16px;
         }
-    }
 `
