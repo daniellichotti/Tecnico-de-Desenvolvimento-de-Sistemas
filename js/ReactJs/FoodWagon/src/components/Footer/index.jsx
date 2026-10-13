@@ -1,4 +1,7 @@
-import { CitiesContainer, FooterContainer, InfoContainer, Infos, RightsContainer, TopCities } from "./styled";
+import { CitiesContainer, FooterContainer, InfoContainer, Infos, RightsContainer, SocialMediaContainer, SubscribeContainer, TopCities } from "./styled";
+import InstagramLogo from '../../assets/1.svg'
+import FacebookLogo from '../../assets/2.svg'
+import TwitterLogo from '../../assets/3.svg'
 
 export function Footer(){
     return (
@@ -69,6 +72,15 @@ export function Footer(){
                     <p>Privacy Policy</p>
                     <p>Cookie Policy</p>
                 </Infos>
+
+                <SubscribeContainer>
+                    <p>Follow Us</p>
+                    <SocialMediaContainer>
+                        <img src={InstagramLogo} alt="" />
+                        <img src={FacebookLogo} alt="" />
+                        <img src={TwitterLogo} alt="" />
+                    </SocialMediaContainer>
+                </SubscribeContainer>
             </InfoContainer>
             
             <RightsContainer>div3</RightsContainer>

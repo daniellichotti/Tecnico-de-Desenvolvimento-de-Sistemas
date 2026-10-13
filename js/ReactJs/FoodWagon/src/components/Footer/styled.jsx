@@ -72,6 +72,32 @@ export const InfoContainer = styled.div`
     gap: 116.5px;
 `
 
+export const SubscribeContainer = styled.div`
+    height: 254px;
+    width: 483px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+
+    margin-top: 43px;
+    `   
+export const SocialMediaContainer = styled.div`
+    height: 24px;
+    width: 101px;
+
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 3px;
+
+    img {
+        height: 24px;
+        width: 24px;
+    }
+`
+
 export const RightsContainer = styled.div`
     height: 53px;
     width: 100%;
