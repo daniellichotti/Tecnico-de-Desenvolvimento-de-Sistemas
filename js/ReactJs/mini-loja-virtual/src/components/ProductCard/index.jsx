@@ -1,13 +1,10 @@
-import { useState } from 'react'
 import { ImageContainer, ProductCardContainer } from './styled'
+import { useCart } from '../CartContext/CartContext'
 
 export function ProductCard({ nome, preco, categoria, imagem}) {
-    const [contador, setContador] = useState(0)
+    const { increment } = useCart()
 
-    function contar(){
-        setContador(contador+1)
-        console.log(contador)
-    }
+    
 
     return (
         <ProductCardContainer>
@@ -17,7 +14,7 @@ export function ProductCard({ nome, preco, categoria, imagem}) {
             <h1>{nome}</h1>
             <h2>${preco}</h2>
             <h2>{categoria}</h2>
-            <button onClick={contar}>Adicionar ao Carrinho</button>
+            <button onClick={increment}>Adicionar ao Carrinho</button>
         </ProductCardContainer>
     )
 };

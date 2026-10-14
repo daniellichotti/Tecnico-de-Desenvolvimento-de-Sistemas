@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import { ProductCard } from "../ProductCard";
 import { MainContainer } from "./styled";
+import { useCart } from "../CartContext/CartContext";
 
 export function Main() {
     const [productList, setProductList] = useState([])
+    const { cartCount } = useCart()
+
+    console.log(cartCount)
 
     useEffect(() => {
         async function fetchProducts() {
