@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { ProductCardContainer } from './styled'
+import { ImageContainer, ProductCardContainer } from './styled'
 
-export function ProductCard({ nome, preco, categoria}) {
+export function ProductCard({ nome, preco, categoria, imagem}) {
     const [contador, setContador] = useState(0)
 
     function contar(){
@@ -11,6 +11,9 @@ export function ProductCard({ nome, preco, categoria}) {
 
     return (
         <ProductCardContainer>
+            <ImageContainer>
+                <img src={imagem} alt="" />
+            </ImageContainer>
             <h1>{nome}</h1>
             <h2>${preco}</h2>
             <h2>{categoria}</h2>

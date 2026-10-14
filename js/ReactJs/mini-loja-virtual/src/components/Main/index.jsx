@@ -24,12 +24,7 @@ export function Main() {
                 nome={product.title}
                 preco={product.price}
                 categoria={product.category}
-                style={{
-                    backgroundImage: `url("${product.image}")`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                }}
+                imagem={product.image}
                 />
             ))
             }
