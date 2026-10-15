@@ -1,24 +1,38 @@
 import { useEffect, useState } from "react";
 import { ProductCard } from "../ProductCard";
 import { MainContainer } from "./styled";
-import { useCart } from "../CartContext/CartContext";
+import {ClockLoader, RingLoader} from 'react-spinners'
 
 export function Main() {
     const [productList, setProductList] = useState([])
-    const { cartCount } = useCart()
-
-    console.log(cartCount)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         async function fetchProducts() {
-            const res = await fetch('https://fakestoreapi.com/products')
-            const data = await res.json()
-            setProductList(data)
+            try {
+                const res = await fetch('https://fakestoreapi.com/products')
+                const data = await res.json()
+
+                setProductList(data)
+            } catch (error) {
+                console.log('Erro ao buscar os produtos: ', error)
+            } finally {
+                await new Promise((res) => setTimeout(res, 4000))
+                setLoading(false)
+            }
 
         }
         
         fetchProducts()
     }, [])
+
+    if(loading) {
+        return (
+            <MainContainer style={{alignItems: "center"}}>
+                <ClockLoader color="#ff8c00" loading={loading} size={50}/>
+            </MainContainer>
+        )
+    }
     
     return (
         <MainContainer>

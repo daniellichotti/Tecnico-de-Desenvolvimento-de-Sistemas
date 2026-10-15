@@ -1,5 +1,9 @@
 # Projeto Prático: Mini Loja Virtual / Cardápio Interativo
 
+bibliotecas:
+spinner: https://www.davidhu.io/react-spinners/
+icons: https://phosphoricons.com/
+
 ## Disciplina: Desenvolvimento Front-end com React
 Requisitos Técnicos: Componentes, props e useState
 Entrega: Código-fonte do projeto (repositório no GitHub ou arquivo .zip)

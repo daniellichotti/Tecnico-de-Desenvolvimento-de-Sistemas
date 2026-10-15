@@ -28,6 +28,18 @@ export const ProductCardContainer = styled.div`
     h2 {
         background-color: white;
     }
+
+    button {
+        background-color: orange;
+        border-radius: 8px;
+        border: none;
+        padding: 16px;
+        margin-top: 16px;
+
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+    }
 `
 
 export const ImageContainer = styled.div`
