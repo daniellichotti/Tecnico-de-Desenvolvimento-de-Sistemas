@@ -4,7 +4,7 @@ import { FormContainer, LoginContainer, LoginFail, LoginSuccess, MainContainer }
 export function Main(){
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [auth, setAuth] = useState(false)
+    const [auth, setAuth] = useState(null)
 
     function handleSubmit(e){
         e.preventDefault()
@@ -46,13 +46,15 @@ export function Main(){
                     <button type="submit">Entrar</button>
                 </FormContainer>
                 {
-                    auth ? 
+                    auth === true && 
                     (
                         <LoginSuccess>
                             <h1>Sucesso!</h1>
                         </LoginSuccess>
                     ) 
-                    : 
+                }
+                {
+                    auth === false && 
                     (
                         <LoginFail>
                             <h1>Credenciais inválidas!</h1>
