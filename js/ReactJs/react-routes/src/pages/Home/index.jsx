@@ -11,7 +11,7 @@ export function Home() {
             'https://reqres.in/api/users/2',
             {
                 headers: {
-                    'x-api-key': import.meta.env.API_KEY
+                    'x-api-key': 'free_user_3KyeFEQHfmE2Y6lUMx3g19dNbNO'
                 }
             }
         )    
