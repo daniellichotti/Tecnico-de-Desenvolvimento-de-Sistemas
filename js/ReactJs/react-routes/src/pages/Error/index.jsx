@@ -1,8 +1,15 @@
-import { ErrorContainer, ImgContainer, TextContainer } from "./styled";
+import { ErrorContainer, HomeButton, ImgButtonContainer, ImgContainer, TextContainer } from "./styled";
 import { BugIcon } from '@phosphor-icons/react'
 import bmoImg from '../../assets/thumb-1920-1408045.jpg'
+import { useNavigate } from "react-router-dom";
 
 export function Error() {
+    const navigate = useNavigate()
+
+    function handleClick(){
+        navigate('/home')
+    }
+
     return (
         <ErrorContainer>
             <TextContainer>
@@ -12,7 +19,10 @@ export function Error() {
                 </div>
                 <p>Não encontramos a página desejada, tem certeza que está correta?</p>
             </TextContainer>
-            <ImgContainer src={bmoImg} alt="" />
+            <ImgButtonContainer>
+                <ImgContainer src={bmoImg} alt="" />
+                <HomeButton onClick={handleClick}>Voltar para Home</HomeButton>
+            </ImgButtonContainer>
         </ErrorContainer>
     )
 };

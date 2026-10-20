@@ -4,7 +4,7 @@ export const ErrorContainer = styled.div`
     height: 100vh;
     width: 100vw;
 
-    background-color: #99f6e4;
+    background-color: var(--bg-color);
 
     display: flex;
     justify-content: center;
@@ -44,4 +44,25 @@ export const ImgContainer = styled.img`
     mix-blend-mode: luminosity;
 
     border-radius: 99%;
+`
+
+export const HomeButton = styled.button`
+    height: 40px;
+    width: 120px;
+    background-color: #f0fdfa;
+    border: none;
+    transition: .1s ease;
+    
+    &:hover {
+        background-color: #e3f0ee;
+    }
+`
+
+export const ImgButtonContainer = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 `

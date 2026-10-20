@@ -1,0 +1,20 @@
+:root {
+    --bg-color: #f69999;
+    --primary-color: #f11b1b
+    --secondary-color: #0d0a0a
+    --text-color: #797979
+
+    --teal-50: #f0fdfa;
+    --teal-100: #ccfbf1;
+    --teal-200: #99f6e4;
+    --teal-300: #5eead4;
+    --teal-400: #2dd4bf;
+    --teal-500: #14b8a6;
+    --teal-600: #14b8a6;
+    --teal-700: #0f766e;
+    
+    --font-size: 24px;
+
+
+
+}
