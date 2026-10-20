@@ -1,5 +1,5 @@
 :root {
-    --bg-color: #f69999;
+    --bg-color: #ccfbf1;
     --primary-color: #f11b1b
     --secondary-color: #0d0a0a
     --text-color: #797979
@@ -14,7 +14,4 @@
     --teal-700: #0f766e;
     
     --font-size: 24px;
-
-
-
 }
