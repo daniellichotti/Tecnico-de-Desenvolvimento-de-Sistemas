@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Header } from "../../components/Header";
-import { HomeContainer } from "./styled";
+import { ButtonsContainer, HomeContainer, UserCard, UsersListContainer } from "./styled";
 import axios from 'axios'
 
 export function Home() {
@@ -39,17 +39,25 @@ export function Home() {
     return (
         <HomeContainer>
             <Header/>
-            <button onClick={buscarUsuario}>Buscar Usuario</button>
-            <button onClick={buscarUsuarios}>Buscar Usuarios</button>
-            {
-                users.map((user) => (
-                        <div key={user.id}>
-                            <img src={user.avatar} alt="" />
-                            <h2>{user.first_name} {user.last_name} </h2>
-                            <p>{user.email}</p>
-                        </div>
-                ))
-            }
+
+            <ButtonsContainer>
+                <button onClick={buscarUsuario}>Buscar Usuario</button>
+                <button onClick={buscarUsuarios}>Buscar Usuarios</button>
+            </ButtonsContainer>
+            
+            <UsersListContainer>
+                {
+                    users.map((user) => (
+                            <UserCard key={user.id}>
+                                <img src={user.avatar} alt="" />
+                                <div>
+                                    <h2>{user.first_name} {user.last_name} </h2>
+                                    <p>{user.email}</p>
+                                </div>
+                            </UserCard>
+                    ))
+                }
+            </UsersListContainer>
         </HomeContainer>
     )
 };
