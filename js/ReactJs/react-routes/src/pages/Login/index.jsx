@@ -14,6 +14,8 @@ export function Login(){
 
         if(username === 'dnl' && password === '123'){
             setAuth(true)
+
+            localStorage.setItem('auth', 'true')
             navigate('/home')
         } else {
             setAuth(false)
