@@ -2,10 +2,13 @@ import { useState } from "react";
 import { Header } from "../../components/Header";
 import { ButtonsContainer, HomeContainer, UserCard, UsersListContainer } from "./styled";
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 export function Home() {
     const [users, setUsers] = useState([])
     const [page, setPage] = useState(1)
+
+    const navigate = useNavigate()
 
     function nextPage(){
         setPage(page+1)
@@ -83,7 +86,7 @@ export function Home() {
             <UsersListContainer>
                 {
                     users.map((user) => (
-                            <UserCard key={user.id}>
+                            <UserCard key={user.id} onClick={() => navigate(`/users/${user.id}`)}>
                                 <img src={user.avatar} alt="" />
                                 <div>
                                     <h2>{user.first_name} {user.last_name} </h2>

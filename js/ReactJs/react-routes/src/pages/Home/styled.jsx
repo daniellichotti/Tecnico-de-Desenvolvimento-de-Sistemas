@@ -56,6 +56,13 @@ export const UserCard = styled.div`
     justify-content: center;
     gap: 16px;
 
+    cursor: pointer;
+    transition: .1s ease;
+
+    &:hover {
+        background-color: var(--teal-300);
+    }
+
     img {
         height: 72px;
         border-radius: 99%;
