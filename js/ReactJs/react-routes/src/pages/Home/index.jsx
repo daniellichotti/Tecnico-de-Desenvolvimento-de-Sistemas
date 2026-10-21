@@ -5,6 +5,21 @@ import axios from 'axios'
 
 export function Home() {
     const [users, setUsers] = useState([])
+    const [page, setPage] = useState(1)
+
+    function nextPage(){
+        setPage(page+1)
+        buscarUsuarios()
+    }
+    function prevPage(){
+        if(page === 1){
+            setPage(1)
+        } else {
+            setPage(page-1)
+        }
+
+        buscarUsuarios()
+    }
 
     async function buscarUsuario() {
         const response = await axios.get(
@@ -23,7 +38,7 @@ export function Home() {
 
     async function buscarUsuarios() {
         const response = await axios.get(
-            'https://reqres.in/api/users?page=1',
+            `https://reqres.in/api/users?page=${page}`,
             {
                 headers: {
                     'x-api-key': import.meta.env.API_KEY
@@ -35,6 +50,26 @@ export function Home() {
 
         setUsers(data)
     }
+
+    if (users.length === 0) {
+        return (
+            <HomeContainer>
+                <Header/>
+
+                <ButtonsContainer>
+                    <button onClick={buscarUsuario}>Buscar Usuario</button>
+                    <button onClick={buscarUsuarios}>Buscar Usuarios</button>
+                </ButtonsContainer>
+
+                <h1>Não tem ninguem aqui! :(</h1>
+
+                <ButtonsContainer>
+                    <button onClick={prevPage}>Anterior</button>
+                    <button onClick={nextPage}>Próximo</button>
+                </ButtonsContainer>
+            </HomeContainer>
+        )
+    } 
 
     return (
         <HomeContainer>
@@ -58,6 +93,12 @@ export function Home() {
                     ))
                 }
             </UsersListContainer>
+
+            <ButtonsContainer>
+                <button onClick={prevPage}>Anterior</button>
+                <button onClick={nextPage}>Próximo</button>
+            </ButtonsContainer>
+
         </HomeContainer>
     )
 };
