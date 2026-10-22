@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { BackButton, UserContainer } from "./styled"
+import { BackButton, UserContainer, UserPageContainer } from "./styled"
 import { Header } from '../../components/Header'
 
 export function User() {
@@ -34,7 +34,7 @@ export function User() {
     }
 
     return (
-        <>
+        <UserPageContainer>
             <Header/>
             <UserContainer>
 
@@ -54,6 +54,6 @@ export function User() {
 
                 <BackButton onClick={toHome}>Voltar para Home</BackButton>
             </UserContainer>
-        </>
+        </UserPageContainer>
     )
 };
