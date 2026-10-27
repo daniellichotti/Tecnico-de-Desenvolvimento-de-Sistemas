@@ -54,11 +54,11 @@ export function CreateUser() {
                     :
                         state === 201 ? 
                         (
-                            <p>Usuário criado com sucesso!</p>
+                            <p style={{backgroundColor: '#9fff9f'}}>Usuário criado com sucesso!</p>
                         )
                         :
                         (
-                            <p>Erro ao cadastrar usuário!</p>
+                            <p style={{backgroundColor: '#ff9f9f'}}>Erro ao cadastrar usuário!</p>
                         )
                 }
             </form>

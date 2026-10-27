@@ -24,6 +24,12 @@ export const CreateUserContainer = styled.div`
 
         background-color: white;
 
+        p {
+            font-size: 20px;
+            padding: 16px;
+            border-radius: 8px;
+        }
+
         input {
             width: 250px;
             height: 40px;
