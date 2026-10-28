@@ -1,15 +1,24 @@
 import Fastify from 'fastify'
+import { v4 } from 'uuid'
+
+let tasks = [
+    { id: 1, title: 'Estudar JavaScript', date: '10-10-27', done: false},
+    { id: 2, title: 'Estudar Ingles', date: '11-11-27', done: false},
+    { id: 3, title: 'Comprar arroz', date: '12-12-27', done: false}
+]
 
 const app = Fastify( { logger: true } )
 
 // ROTA GET
-app.get('/', async () => {
-    return { mensagem: 'Acorda thiago!' }
+app.get('/tasks', async (request, response) => {
+    response.code(200).send(tasks)
 })
 
 // ROTA GET BY ID COM URL PARAMS
-app.get('/animes/:id', async (request) => {
-    return { id: request.params.id }
+app.get('/tasks/:id', async (request, response) => {
+    const task = tasks.find(task => task.id === request.params.id)
+
+    response.code(200).send(task)
 })
 
 // ROTA GET COM URL QUERY
@@ -18,8 +27,15 @@ app.get('/animes', async (request) => {
 })
 
 // ROTA POST
-app.post('/eco', async (request) => {
-    return { eco: request.body }
+app.post('/tasks', async (request, response) => {
+    const newTask = { 
+        id: v4(), 
+        date: new Date(),
+        done: false,
+        ...request.body 
+        }
+    tasks.push(newTask)
+    response.code(201).send(newTask)
 })
 
 app.listen({ port: 3000 }, (err, address) => {
