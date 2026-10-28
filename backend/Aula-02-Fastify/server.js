@@ -21,9 +21,14 @@ app.get('/tasks/:id', async (request, response) => {
     response.code(200).send(task)
 })
 
-// ROTA GET COM URL QUERY
-app.get('/animes', async (request) => {
-    return { rating: request.query.rating }
+// ROTA GET COM URL QUERY localhost:3000/tasks?done=true
+app.get('/tasks-done', async (request, response) => {
+    
+    let tasksDone = tasks.filter(task => String(task.done) === request.query.done)
+
+    console.log(tasksDone)
+
+    response.code(200).send(tasksDone)
 })
 
 // ROTA POST
