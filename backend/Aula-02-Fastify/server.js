@@ -26,9 +26,14 @@ app.get('/tasks-done', async (request, response) => {
     
     let tasksDone = tasks.filter(task => String(task.done) === request.query.done)
 
-    console.log(tasksDone)
-
     response.code(200).send(tasksDone)
+})
+
+// ROTA DELETE
+app.delete('/tasks/:id', async (request, response) => {
+    tasks = tasks.filter(task => task.id !== request.params.id)
+
+    response.code(202).send(tasks)
 })
 
 // ROTA POST
@@ -41,6 +46,34 @@ app.post('/tasks', async (request, response) => {
         }
     tasks.push(newTask)
     response.code(201).send(newTask)
+})
+
+// ROTA PUT
+app.put('/tasks', async (request, response) => {
+
+    const body = request.body
+    const index = tasks.findIndex(p => p.id === body.id)
+    if (index === -1) {
+        return { error: "Erro, task não encontrada"}
+    }
+
+    tasks[index] = { ...tasks[index], ...body }
+
+    response.code(200).send(tasks[index])
+})
+
+// ROTA PATCH - UPDATE DONE
+app.patch('/tasks/:id', async (request, response) => {
+
+    //const body = request.body
+    const index = tasks.findIndex(p => p.id === request.params.id)
+    if (index === -1) {
+        return { error: "Erro, task não encontrada"}
+    }
+
+    tasks[index] = { ...tasks[index], "done": !tasks[index].done }
+
+    response.code(200).send(tasks[index])
 })
 
 app.listen({ port: 3000 }, (err, address) => {
