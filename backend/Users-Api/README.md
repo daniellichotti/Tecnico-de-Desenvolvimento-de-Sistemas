@@ -4,4 +4,4 @@
         `
         "dev": "node --watch server.js"
         `
-2. npm install fastify uuid
+2. npm install fastify uuid dotenv
