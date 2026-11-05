@@ -1,30 +1,24 @@
 import { v4 } from "uuid"
-
-let users = [
-    { id: "1", name: "Pedro", email: "pedrinho@yahoo.com", password: "123", createdAt: "10-10-10" },
-    { id: "2", name: "Filipe", email: "filipinho@yahoo.com", password: "456", createdAt: "10-10-10" },
-    { id: "3", name: "Danilo", email: "daniliinho@yahoo.com", password: "789", createdAt: "10-10-10" },
-    { id: "4", name: "William", email: "williamzinho@yahoo.com", password: "101112", createdAt: "10-10-10" }
-]
+import { db } from "../database/connection.js"
 
 export async function getAllUsers() {
+    const [ users ] = await db.query("SELECT * FROM usuarios")
+
     return users
 }
 
 export async function getUserById(id) {
-    return users.find(user => user.id === id)
+    const [ user ] = await db.query("SELECT * FROM usuarios WHERE id = ?", [id])
+    
+    return user
 }
 
 export async function postUser(body) {
-    const newUser = { 
-            id: v4(), 
-            createdAt: new Date(),
-            ...body
-        }
+    const { name, email, password } = body
 
-    users.push(newUser)
+    const user = await db.query("INSERT INTO usuarios (id, name, email, password, createdAt) VALUES (?, ?, ?, ?, ?)", [v4(), name, email, password, "arroz"])
     
-    return newUser
+    return user
 }
 
 export async function deleteUserService(id) {
