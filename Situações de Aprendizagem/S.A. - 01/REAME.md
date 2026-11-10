@@ -54,7 +54,7 @@ Tratamento de estados de carregamento (Loading) e erros (Feedbacks visuais) ao t
 
 A avaliação final do projeto ocorrerá por meio da apresentação da aplicação rodando e revisão do código-fonte armazenado em um repositório Git.
 
-Lógica de Back-end: O CRUD obedece às boas práticas de API REST (verbos HTTP corretos, retornos de status HTTP adequados)? A conexão ORM/SQL está segura contra injeções?
+Lógica de Back-end: O CRUD obedece às boas práticas de API REST (verbos HTTP corretos, retornos de status HTTP adequados)?
 
 Domínio de Hooks: O estado da aplicação no front-end foi gerenciado via Hooks corretamente, evitando vazamento de memória ou renders em loop infinito?
 
