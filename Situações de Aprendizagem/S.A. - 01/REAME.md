@@ -24,3 +24,38 @@ Interface: Criar um painel administrativo (dashboard) simples e responsivo para 
 Hooks: O gerenciamento de estado e ciclo de vida deve ser feito utilizando Hooks (como useState e useEffect em React).
 
 Paginação na Interface: A tabela ou grade de listagem de equipamentos deve incluir controles de paginação (botões "Anterior", "Próximo" e numeração das páginas). Ao interagir com esses controles, um Hook deve atualizar o estado da página atual, disparando uma nova requisição ao Back-end de forma assíncrona.
+
+## Etapas de Desenvolvimento (Milestones)
+Fase 1: Modelagem e Infraestrutura
+
+Levantamento e definição da tabela de equipamentos no banco de dados.
+
+Setup do projeto Back-end e teste da conexão com o banco conteinerizado.
+
+Fase 2: Construção da API e Integração com DB
+
+Criação da estrutura de pastas do Back-end (Controllers, Models, Routes).
+
+Desenvolvimento das rotas de criação, edição e exclusão.
+
+Implementação da lógica de paginação (limit/offset) na rota de listagem.
+
+Testes e validação de todos os endpoints via Insomnia.
+
+Fase 3: Interface e Conectividade
+
+Setup do projeto Front-end e criação dos componentes base (Formulários, Tabela, Botões de Paginação).
+
+Implementação dos Hooks de estado e efeitos para consumir a API REST.
+
+Tratamento de estados de carregamento (Loading) e erros (Feedbacks visuais) ao transitar entre as páginas da tabela de listagem.
+
+### Entregáveis e Critérios de Avaliação
+
+A avaliação final do projeto ocorrerá por meio da apresentação da aplicação rodando e revisão do código-fonte armazenado em um repositório Git.
+
+Lógica de Back-end: O CRUD obedece às boas práticas de API REST (verbos HTTP corretos, retornos de status HTTP adequados)? A conexão ORM/SQL está segura contra injeções?
+
+Domínio de Hooks: O estado da aplicação no front-end foi gerenciado via Hooks corretamente, evitando vazamento de memória ou renders em loop infinito?
+
+Paginação Real: A paginação está ocorrendo de fato no nível do banco de dados (o payload de resposta da API traz apenas 10 itens por vez, por exemplo) ou os alunos cometeram o erro de trazer o banco todo e fatiar apenas visualmente no Front-end? A interface responde com precisão aos botões numéricos?
